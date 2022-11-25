@@ -20,7 +20,7 @@ router.post('/masuk', function(req, res, next) {
   var options = {
     host: 'localhost',
     path: '/users/login',
-    port: '3001',
+    port: '3000',
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
