@@ -9,6 +9,7 @@ router.get('/', function(req, res, next) {
 
 /*proses authentication via web service lain*/
 router.post('/masuk', function(req, res, next) {
+  var session = req.session;
   var nama = req.body.nama;
   var password = req.body.password;
 
@@ -36,7 +37,10 @@ router.post('/masuk', function(req, res, next) {
     });
 
     response.on('end', function () {
-      res.json(JSON.parse(str));
+      var objectJson = JSON.parse(str);
+      session.jwt = objectJson.data;
+      session.save();
+      res.json(objectJson);
     });
 
   } 
