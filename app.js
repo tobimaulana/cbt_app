@@ -9,6 +9,8 @@ var cors = require('cors');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var tagihanRouter = require('./routes/tagihan');
+var soalRouter = require('./routes/soal');
+var jawabanRouter = require('./routes/jawaban');
 
 var app = express();
 
@@ -29,6 +31,8 @@ app.use(session({
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/tagihan', tagihanRouter);
+app.use('/soal', soalRouter);
+app.use('/jawaban', jawabanRouter);
 
 
 // catch 404 and forward to error handler
