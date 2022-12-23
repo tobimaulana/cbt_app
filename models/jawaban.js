@@ -8,7 +8,7 @@ var Jawaban = koneksi.define('jawaban', {
        nis          : Sequelize.STRING,
        jawaban      : Sequelize.STRING,
        koreksi      : Sequelize.INTEGER,
-       sync_at      : Sequelize.DATE,
+       syncAt       : Sequelize.DATE,
 }, {
        timestamps:true,
        tableName:"jawaban"
